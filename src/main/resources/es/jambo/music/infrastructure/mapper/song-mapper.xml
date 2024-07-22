@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+        namespace="es.jambo.music.infrastructure.persistence.dao.song.SongDAO">
+    <!--insert-->
+    <insert id="create">
+        INSERT INTO SONG (
+        ID,
+        NAME,
+        DURATION,
+        CREATED_AT)
+        VALUES (
+        #{id},
+        #{name},
+        #{duration},
+        sysdate
+        )
+    </insert>
+    <!--update-->
+    <!--delete-->
+    <!--select-->
+    <select id="findById" resultMap="basicMapper">
+        SELECT
+        ID,
+        NAME,
+        DURATION,
+        CREATED_AT
+        FROM SONG
+        WHERE ID = #{id}
+    </select>
+    <!--resultmaps-->
+    <resultMap id="basicMapper"
+               type="es.jambo.music.infrastructure.persistence.model.song.SongPO">
+        <id column="id" property="id" javaType="String"/>
+        <result column="name" property="name" javaType="String"/>
+        <result column="duration" property="duration" javaType="Integer"/>
+        <result column="created_at" property="createdAt" javaType="java.time.LocalDateTime"/>
+    </resultMap>
+</mapper>
