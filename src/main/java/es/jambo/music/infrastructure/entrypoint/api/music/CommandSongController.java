@@ -1,43 +1,25 @@
 package es.jambo.music.infrastructure.entrypoint.api.music;
 
+import es.jambo.music.application.song.create.CreateSong;
+import es.jambo.music.application.song.create.SongDTO;
 import es.jambo.music.infrastructure.shared.EndPoints;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(EndPoints.SongEndPoints.SONG)
 final class CommandSongController {
-/*
-    private final CreateCustomer createCustomer;
 
-    private final UpdateCustomer updateCustomer;
+    private final CreateSong createSong;
 
-    private final DeleteCustomer deleteCustomer;
-
-    CommandCustomerController(CreateCustomer createCustomer, UpdateCustomer updateCustomer, DeleteCustomer deleteCustomer) {
-        this.createCustomer = createCustomer;
-        this.updateCustomer = updateCustomer;
-        this.deleteCustomer = deleteCustomer;
+    public CommandSongController(CreateSong createSong) {
+        this.createSong = createSong;
     }
 
-    @Operation(operationId = "createCustomer")
     @PostMapping("/")
-    public void create(@RequestBody CreateCustomerDTO customerDTO) {
-        createCustomer.create(customerDTO);
+    public void create(@RequestBody SongDTO song) {
+        createSong.create(song);
     }
-
-    @Operation(operationId = "updatePutCustomer")
-    @PutMapping("/{id}")
-    public Long update(@PathVariable String id, @RequestBody UpdateCustomerDTO customerDTO) {
-        customerDTO.setId(id);
-        return this.updateCustomer.update(customerDTO);
-    }
-
-    @Operation(operationId = "deleteCustomer")
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id) {
-        deleteCustomer.delete(id);
-    }
-
- */
 }
