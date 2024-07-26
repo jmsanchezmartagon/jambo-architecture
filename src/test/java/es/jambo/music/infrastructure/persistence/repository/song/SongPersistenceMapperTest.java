@@ -1,6 +1,6 @@
 package es.jambo.music.infrastructure.persistence.repository.song;
 
-import es.jambo.music.utils.song.SongUtils;
+import es.jambo.music.utils.song.SongEntitiesUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,7 @@ class SongPersistenceMapperTest {
 
     @Test
     void should_getPersistenceSong_when_parseDomain() {
-        final var song = SongUtils.createEntity();
+        final var song = SongEntitiesUtils.createEntity();
 
         final var po = SongPersistenceMapper.FROM.domain(song);
 

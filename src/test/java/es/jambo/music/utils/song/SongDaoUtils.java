@@ -1,4 +1,4 @@
-package es.jambo.music.infrastructure.persistence.dao.song;
+package es.jambo.music.utils.song;
 
 import es.jambo.music.infrastructure.persistence.model.song.SongPO;
 import org.assertj.core.api.Assertions;
@@ -6,11 +6,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-final class SongDaoTestUtils {
+public final class SongDaoUtils{
 
     private JdbcTemplate jdbcTemplate;
 
-    public SongDaoTestUtils(JdbcTemplate jdbcTemplate) {
+    public SongDaoUtils(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

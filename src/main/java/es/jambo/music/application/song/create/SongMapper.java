@@ -6,9 +6,9 @@ import es.jambo.music.domain.song.entity.SongDuration;
 import es.jambo.music.domain.song.entity.SongName;
 
 enum SongMapper {
-    from;
+    FROM;
 
-    public Song dto(SongDTO dto) {
+    public Song dto(CreateSongDTO dto) {
         return new Song.Builder()
                 .id(new UuId(dto.getId()))
                 .name(new SongName(dto.getName()))

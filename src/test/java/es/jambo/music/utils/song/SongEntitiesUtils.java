@@ -1,6 +1,6 @@
 package es.jambo.music.utils.song;
 
-import es.jambo.music.application.song.create.SongDTO;
+import es.jambo.music.application.song.create.CreateSongDTO;
 import es.jambo.music.domain.shared.UuId;
 import es.jambo.music.domain.song.entity.Song;
 import es.jambo.music.domain.song.entity.SongDuration;
@@ -11,14 +11,14 @@ import es.jambo.music.utils.generator.StringGenerator;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public final class SongUtils {
+public final class SongEntitiesUtils {
 
     public static final String SONG_ID = UUID.randomUUID().toString();
     public static final String SONG_NAME = "Runnin' Wild";
     public static final int SONG_DURATION = 222;
 
-    public static SongDTO createDTO() {
-        final var dto = new SongDTO();
+    public static CreateSongDTO createDTO() {
+        final var dto = new CreateSongDTO();
         dto.setId(SONG_ID);
         dto.setName(SONG_NAME);
         dto.setDuration(SONG_DURATION);

@@ -2,7 +2,7 @@ package es.jambo.music.infrastructure.persistence.repository.song;
 
 import es.jambo.music.infrastructure.persistence.dao.song.SongDAO;
 import es.jambo.music.infrastructure.persistence.model.song.SongPO;
-import es.jambo.music.utils.song.SongUtils;
+import es.jambo.music.utils.song.SongEntitiesUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,7 +22,7 @@ final class CreateSongRepositoryImplTest {
 
     @Test
     void should_persistSong() {
-        final var song = SongUtils.createEntity();
+        final var song = SongEntitiesUtils.createEntity();
 
         createSongRepository.create(song);
 

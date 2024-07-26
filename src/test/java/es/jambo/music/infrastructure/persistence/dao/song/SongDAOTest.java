@@ -2,7 +2,8 @@ package es.jambo.music.infrastructure.persistence.dao.song;
 
 import es.jambo.music.AbstractIntegrationTest;
 import es.jambo.music.infrastructure.persistence.model.song.SongPO;
-import es.jambo.music.utils.song.SongUtils;
+import es.jambo.music.utils.song.SongDaoUtils;
+import es.jambo.music.utils.song.SongEntitiesUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,11 @@ final class SongDAOTest extends AbstractIntegrationTest {
     private SongDAO dao;
 
     @Autowired
-    private SongDaoTestUtils utils;
+    private SongDaoUtils utils;
 
     @Test
     void should_getAll_when_readRecordsWithoutOffset() {
-        final var po = SongUtils.createPO();
+        final var po = SongEntitiesUtils.createPO();
 
         dao.create(po);
 
@@ -30,7 +31,7 @@ final class SongDAOTest extends AbstractIntegrationTest {
 
     @Test
     void should_getSong_when_searchById() {
-        final var po = SongUtils.createPO();
+        final var po = SongEntitiesUtils.createPO();
         utils.createdSong(po);
 
         final var song = dao.findById(po.getId());

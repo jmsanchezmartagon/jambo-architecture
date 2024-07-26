@@ -1,7 +1,7 @@
 package es.jambo.music.infrastructure.entrypoint.api.music;
 
 import es.jambo.music.application.song.create.CreateSong;
-import es.jambo.music.application.song.create.SongDTO;
+import es.jambo.music.application.song.create.CreateSongDTO;
 import es.jambo.music.infrastructure.shared.EndPoints;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +19,7 @@ final class CommandSongController {
     }
 
     @PostMapping("/")
-    public void create(@RequestBody SongDTO song) {
+    public void create(@RequestBody CreateSongDTO song) {
         createSong.create(song);
     }
 }

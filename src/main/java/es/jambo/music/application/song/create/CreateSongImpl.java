@@ -21,8 +21,8 @@ class CreateSongImpl implements CreateSong {
     }
 
     @Override
-    public void create(SongDTO songDTO) {
-        final var song = SongMapper.from.dto(songDTO);
+    public void create(CreateSongDTO dto) {
+        final var song = SongMapper.FROM.dto(dto);
 
         final var exists = querySongRepository.exists(song.id());
         if (exists)

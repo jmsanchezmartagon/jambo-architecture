@@ -6,7 +6,7 @@ import es.jambo.music.domain.song.entity.Song;
 import es.jambo.music.domain.song.repository.CreateSongRepository;
 import es.jambo.music.domain.song.repository.QuerySongRepository;
 import es.jambo.music.shared.message.KeyMessageSource;
-import es.jambo.music.utils.song.SongUtils;
+import es.jambo.music.utils.song.SongEntitiesUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,7 +28,7 @@ class CreateSongImplTest {
 
     @Test
     void should_createSong_when_haveSongData() {
-        final var data = SongUtils.createDTO();
+        final var data = SongEntitiesUtils.createDTO();
         createSong.create(data);
 
         final var songCapture = ArgumentCaptor.forClass(Song.class);
@@ -42,7 +42,7 @@ class CreateSongImplTest {
 
     @Test
     void should_getError_when_createSongThatExists() {
-        final var data = SongUtils.createDTO();
+        final var data = SongEntitiesUtils.createDTO();
         BDDMockito.given(querySongRepository.exists(new UuId(data.getId()))).willReturn(Boolean.TRUE);
 
         final var error = Assertions.catchThrowable(() -> createSong.create(data));
