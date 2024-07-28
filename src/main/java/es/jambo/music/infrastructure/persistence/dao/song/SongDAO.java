@@ -5,7 +5,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface SongDAO {
-
     int create(SongPO entity);
 
     SongPO findById(String id);

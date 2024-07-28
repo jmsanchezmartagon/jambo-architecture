@@ -3,6 +3,7 @@ package es.jambo.music.shared.message;
 public final class KeyMessageSource {
 
     private KeyMessageSource() {
+        throw new IllegalCallerException();
     }
 
     //DOMAIN

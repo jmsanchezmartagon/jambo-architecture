@@ -18,7 +18,7 @@ final class MessageServiceImpl implements MessageService {
 
     private final MessageSource messagesSource;
 
-    public MessageServiceImpl(ResourceBundleMessageSource messageSource) {
+    MessageServiceImpl(ResourceBundleMessageSource messageSource) {
         this.messagesSource = messageSource;
     }
 

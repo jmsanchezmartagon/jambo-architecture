@@ -14,7 +14,7 @@ final class CommandSongController {
 
     private final CreateSong createSong;
 
-    public CommandSongController(CreateSong createSong) {
+    CommandSongController(CreateSong createSong) {
         this.createSong = createSong;
     }
 

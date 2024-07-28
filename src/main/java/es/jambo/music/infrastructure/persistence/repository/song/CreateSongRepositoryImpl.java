@@ -10,7 +10,7 @@ final class CreateSongRepositoryImpl implements CreateSongRepository {
 
     private final SongDAO songDAO;
 
-    public CreateSongRepositoryImpl(SongDAO songDAO) {
+    CreateSongRepositoryImpl(SongDAO songDAO) {
         this.songDAO = songDAO;
     }
 

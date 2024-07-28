@@ -1,0 +1,29 @@
+services:
+  ddbb:
+    image: gvenzl/oracle-xe:21-slim-faststart
+    expose:
+      - 1521
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_RANDOM_PASSWORD: "true"
+    volumes:
+      - ./database:/container-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh" ]
+      interval: 2s
+  service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      nodename: "server.1"
+      server.port: 8083
+    volumes:
+      - ./target:/opt/app
+    expose:
+      - 8083
+    ports:
+      - "8083:8083"
+    depends_on:
+      - ddbb
